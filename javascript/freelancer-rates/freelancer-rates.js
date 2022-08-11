@@ -19,6 +19,8 @@
 //
 // Get those rates calculated!
 
+const HOURS_PER_DAY = 8;
+
 /**
  * The day rate, given a rate per hour
  *
@@ -26,7 +28,7 @@
  * @returns {number} the rate per day
  */
 export function dayRate(ratePerHour) {
-  throw new Error('Remove this line and implement the function');
+  return ratePerHour * HOURS_PER_DAY;
 }
 
 /**
