@@ -4,6 +4,9 @@
   "env": {
     "jest": true
   },
+  "rules": {
+    "semi": [2, "always"]
+  },
   "overrides": [
     {
       "files": [".meta/proof.ci.js", ".meta/exemplar.js", "*.spec.js"],

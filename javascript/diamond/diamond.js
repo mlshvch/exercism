@@ -4,31 +4,31 @@
 //
 
 export const rows = (border) => {
-  const RIGHT_BORDER_CODE = border.charCodeAt(0)
-  const LEFT_BORDER_CODE = 'A'.charCodeAt(0)
-  const STEPS = RIGHT_BORDER_CODE - LEFT_BORDER_CODE
-  let result = []
+  const RIGHT_BORDER_CODE = border.charCodeAt(0);
+  const LEFT_BORDER_CODE = 'A'.charCodeAt(0);
+  const STEPS = RIGHT_BORDER_CODE - LEFT_BORDER_CODE;
+  let result = [];
 
   for (let i = 0; i <= STEPS; i++) {
     const STEP_UP = STEPS - i;
     const STEP_DOWN = STEPS + i;
-    let data = []
+    let data = [];
     for (let j = STEPS; j >= 0; j--) {
       const LEFT_STEP = STEPS - j;
       const RIGHT_STEP = STEPS + j;
       if (i + j === STEPS) {
-        data[LEFT_STEP] = data[RIGHT_STEP] = String.fromCharCode(LEFT_BORDER_CODE + j)
+        data[LEFT_STEP] = data[RIGHT_STEP] = String.fromCharCode(LEFT_BORDER_CODE + j);
       } else {
-        data[LEFT_STEP] = data[RIGHT_STEP] = ' '
+        data[LEFT_STEP] = data[RIGHT_STEP] = ' ';
 
       }
 
     }
-    result[STEP_UP] = result[STEP_DOWN] = data.join('')
+    result[STEP_UP] = result[STEP_DOWN] = data.join('');
 
   }
 
-  return result
+  return result;
   // for (let i = 0; i < LENGTH; i++) {
   //   let data = []
   //   if (Math.abs(MIDDLE - i) !== 0) {
