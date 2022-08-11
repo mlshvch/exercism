@@ -40,7 +40,7 @@ export function frontDoorResponse(line) {
 export function frontDoorPassword(word) {
   const FIRST_LETTER = frontDoorResponse(word).toUpperCase();
   const WORD = word.slice(1).toLowerCase();
-  return FIRST_LETTER.concat(WORD);
+  return FIRST_LETTER + WORD;
 }
 
 /**
@@ -51,7 +51,7 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  const LINE =  line.trim();
+  const LINE = line.trim();
   const INDEX = LINE.length - 1;
   return LINE[INDEX];
 }
@@ -64,5 +64,5 @@ export function backDoorResponse(line) {
  * @returns {string} the back door password
  */
 export function backDoorPassword(word) {
-  return frontDoorPassword(word).concat(", please",)
+  return frontDoorPassword(word) + ', please';
 }
