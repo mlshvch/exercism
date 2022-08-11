@@ -51,7 +51,9 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  throw new Error('Remove this line and implement the function');
+  const LINE =  line.trim();
+  const INDEX = LINE.length - 1;
+  return LINE[INDEX];
 }
 
 /**
