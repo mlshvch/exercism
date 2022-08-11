@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "extends": "@exercism/eslint-config-javascript",
+  "env": {
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6 // or 7,8,9
+  },
+  "overrides": [
+    {
+      "files": [".meta/proof.ci.js", ".meta/exemplar.js", "*.spec.js"],
+      "excludedFiles": ["custom.spec.js"],
+      "extends": "@exercism/eslint-config-javascript/maintainers"
+    }
+  ]
+}
