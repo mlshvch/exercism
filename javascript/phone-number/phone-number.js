@@ -4,6 +4,30 @@
 //
 
 export const clean = (number) => {
-  return number.replace(/[^0-9]+/g, '')
+  let cleanedNumber = number.replace(/[^0-9]+/g, '')
 
+  if (cleanedNumber.length === 11) {
+    if (cleanedNumber[0] === '1') {
+      cleanedNumber = cleanedNumber.substring(1);
+    } else {
+      throw new Error('11 digits must start with 1')
+    }
+  }
+
+  if (cleanedNumber.length < 10) {
+    throw new Error('Incorrect number of digits')
+  } else if (cleanedNumber.length === 10) {
+    if (cleanedNumber[0] === '0') {
+      throw new Error('Area code cannot start with zero')
+    } else if (cleanedNumber[0] === '1') {
+      throw new Error('Area code cannot start with one')
+    } else if (cleanedNumber[3] === '0') {
+      throw new Error('Exchange code cannot start with zero')
+    } else if (cleanedNumber[3] === '1') {
+      throw new Error('Exchange code cannot start with one')
+    }
+  } else if (cleanedNumber.length >= 11) {
+    throw new Error('More than 11 digits')
+  }
+  return cleanedNumber;
 };
