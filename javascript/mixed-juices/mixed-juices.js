@@ -35,8 +35,30 @@ export function timeToMixJuice(name) {
  * @param {string[]} limes
  * @returns {number} number of limes cut
  */
+
+const WEDGES_PER_SIZE = {
+  'small': 6,
+  'medium': 8,
+  'large': 10
+}
+
 export function limesToCut(wedgesNeeded, limes) {
-  throw new Error('Please implement the limesToCut function');
+  if (wedgesNeeded === 0) {
+    return 0;
+  }
+
+  let wedgesPrepared = 0
+  let used_limes = 0;
+  while (used_limes < limes.length) {
+    if (wedgesPrepared >= wedgesNeeded) {
+      break
+    } else {
+      let lime = limes[used_limes];
+      wedgesPrepared += WEDGES_PER_SIZE[lime];
+      used_limes += 1;
+    }
+  }
+  return used_limes;
 }
 
 /**
