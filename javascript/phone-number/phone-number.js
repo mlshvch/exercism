@@ -6,6 +6,10 @@
 export const clean = (number) => {
   let cleanedNumber = number.replace(/[^0-9]+/g, '')
 
+  if (number.replace(/[^a-zA-Z]+/g, '') !== '') {
+    throw new Error('Letters not permitted')
+  }
+
   if (cleanedNumber.length === 11) {
     if (cleanedNumber[0] === '1') {
       cleanedNumber = cleanedNumber.substring(1);
@@ -15,7 +19,11 @@ export const clean = (number) => {
   }
 
   if (cleanedNumber.length < 10) {
-    throw new Error('Incorrect number of digits')
+    if (number.replace(/\d+/g, '') !== '') {
+      throw new Error('Punctuations not permitted')
+    } else {
+      throw new Error('Incorrect number of digits')
+    }
   } else if (cleanedNumber.length === 10) {
     if (cleanedNumber[0] === '0') {
       throw new Error('Area code cannot start with zero')
@@ -29,5 +37,6 @@ export const clean = (number) => {
   } else if (cleanedNumber.length >= 11) {
     throw new Error('More than 11 digits')
   }
+
   return cleanedNumber;
 };
