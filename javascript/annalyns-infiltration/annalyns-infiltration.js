@@ -71,5 +71,7 @@ export function canFreePrisoner(
   prisonerIsAwake,
   petDogIsPresent
 ) {
-  throw new Error('Remove this line and implement the function');
+  const FIRST_WAY = !archerIsAwake && petDogIsPresent;
+  const SECOND_WAY = prisonerIsAwake && !archerIsAwake && !knightIsAwake && !petDogIsPresent;
+  return FIRST_WAY || SECOND_WAY;
 }
