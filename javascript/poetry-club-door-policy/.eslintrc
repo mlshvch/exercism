@@ -2,7 +2,8 @@
   "root": true,
   "extends": "@exercism/eslint-config-javascript",
   "env": {
-    "jest": true
+    "jest": true,
+    "es6": true
   },
   "overrides": [
     {
