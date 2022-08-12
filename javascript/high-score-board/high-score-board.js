@@ -55,7 +55,11 @@ export function updateScore(scoreBoard, player, points) {
  * @returns {Record<string, number>} updated score board
  */
 export function applyMondayBonus(scoreBoard) {
-  throw new Error('Please implement the applyMondayBonus function');
+  for (let key in scoreBoard) {
+    updateScore(scoreBoard, key, 100)
+  }
+  return scoreBoard;
+
 }
 
 /**
