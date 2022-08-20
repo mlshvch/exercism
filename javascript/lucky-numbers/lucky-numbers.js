@@ -34,7 +34,15 @@ export function twoSum(array1, array2) {
  * @returns {boolean}  whether the number is a palindrome or not
  */
 export function luckyNumber(value) {
-  throw new Error('Implement the luckyNumber function');
+  let data = String(value).split("");
+  if (data.length === 1) {
+    return true;
+  }
+
+  const mid = Math.ceil(data.length / 2);
+  const leftSide = data.slice(0, mid).join("");
+  const rightSide = data.slice(-mid).reverse().join("");
+  return leftSide === rightSide;
 }
 
 /**
