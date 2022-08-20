@@ -1,6 +1,22 @@
 // @ts-check
 
 /**
+ * Concatenates array elements into final number.
+ * 
+ * @param {number[]} array
+ * @returns {number} final number
+ * 
+ */
+
+export function arrayToNumber(array) {
+  let number = ''
+  for (let elem in array) {
+    number += String(array[elem]);
+  }
+  return Number(number);
+}
+
+/**
  * Calculates the sum of the two input arrays.
  *
  * @param {number[]} array1

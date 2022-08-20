@@ -1,4 +1,15 @@
-import { twoSum, luckyNumber, errorMessage } from './lucky-numbers';
+import { arrayToNumber, twoSum, luckyNumber, errorMessage } from './lucky-numbers';
+
+describe('arrayToNumber', () => {
+  test('returns number consists of digits in array', () => {
+    const array1 = [1, 2, 3];
+    const array2 = [0, 7];
+    const array3 = [0, 3, 0];
+    expect(arrayToNumber(array1)).toBe(123);
+    expect(arrayToNumber(array2)).toBe(7);
+    expect(arrayToNumber(array3)).toBe(30);
+  });
+});
 
 describe('twoSum', () => {
   test('sums the numbers correctly for short arrays', () => {
