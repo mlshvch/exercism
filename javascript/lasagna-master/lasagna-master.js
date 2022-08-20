@@ -1,7 +1,5 @@
 /// <reference path="./global.d.ts" />
 
-import exp from "constants";
-
 // @ts-check
 
 /**
