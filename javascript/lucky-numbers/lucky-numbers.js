@@ -53,5 +53,19 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  throw new Error('Implement the errorMessage function');
+  const data = Number(input);
+  if (data) {
+    return '';
+  } else {
+    switch (input) {
+      case undefined:
+        return 'Required field';
+      case null:
+        return 'Required field';
+      case '':
+        return 'Required field';
+      default:
+        return 'Must be a number besides 0';
+    }
+  }
 }
