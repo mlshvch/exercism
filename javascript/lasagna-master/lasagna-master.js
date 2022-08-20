@@ -1,4 +1,7 @@
 /// <reference path="./global.d.ts" />
+
+import exp from "constants";
+
 // @ts-check
 
 /**
@@ -72,5 +75,21 @@ export function quantities(layers) {
  */
 
 export function addSecretIngredient(friendsList, myList) {
-  myList.push( friendsList[friendsList.length - 1])
+  myList.push(friendsList[friendsList.length - 1])
+}
+
+/**
+ * 
+ * @param {object} recipe 
+ * @param {number} numberOfPortions 
+ * @returns {object}
+ */
+
+export function scaleRecipe(recipe, numberOfPortions) {
+  const coefficient = numberOfPortions / 2;
+  let scaledRecipe = {};
+  for (let item in recipe) {
+    scaledRecipe[item] = recipe[item] * coefficient;
+  }
+  return scaledRecipe;
 }
