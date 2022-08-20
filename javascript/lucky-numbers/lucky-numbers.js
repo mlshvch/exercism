@@ -24,7 +24,7 @@ export function arrayToNumber(array) {
  * @returns {number} sum of the two arrays
  */
 export function twoSum(array1, array2) {
-  throw new Error('Implement the twoSum function');
+  return arrayToNumber(array1) + arrayToNumber(array2);
 }
 
 /**
