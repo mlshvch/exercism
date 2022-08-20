@@ -10,3 +10,20 @@
  *   ...
  * }
  */
+
+/**
+ * 
+ * @param {number} remainingTIme 
+ * @returns {string} result
+ */
+
+export function cookingStatus(remainingTIme) {
+  switch (remainingTIme) {
+    case 0:
+      return 'Lasagna is done.'
+    case undefined:
+      return 'You forgot to set the timer.'
+    default:
+      return 'Not done, please wait.'
+  }
+}
