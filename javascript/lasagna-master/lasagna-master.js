@@ -38,3 +38,29 @@ export function cookingStatus(remainingTIme) {
 export function preparationTime(layers, time = 2) {
   return layers.length * time
 }
+
+/**
+ * 
+ * @param {string[]} layers 
+ * @returns {object} object with keys 'noodles' and 'sauce'
+ */
+
+export function quantities(layers) {
+  const noodlesPerLayer = 50;
+  const saucePerLayer = 0.2;
+  let result = {
+    noodles: 0,
+    sauce: 0
+  }
+  for (let index in layers) {
+    switch (layers[index]) {
+      case 'sauce':
+        result.sauce += saucePerLayer;
+        break;
+      case 'noodles':
+        result.noodles += noodlesPerLayer;
+        break;
+    }
+  }
+  return result;
+}
