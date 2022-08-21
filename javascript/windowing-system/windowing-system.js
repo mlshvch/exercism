@@ -15,3 +15,16 @@ Size.prototype.resize = function (newWidth, newHeight) {
   this.width = newWidth;
   this.height = newHeight;
 }
+
+export class Position {
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y
+  }
+
+  move(newX, newY) {
+    this.x = newX;
+    this.y = newY;
+  }
+
+}
