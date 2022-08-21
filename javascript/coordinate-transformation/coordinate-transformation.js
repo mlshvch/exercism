@@ -16,8 +16,8 @@
  */
 export function translate2d(dx, dy) {
   return function (x, y) {
-    return [dx + x, dy + y]
-  }
+    return [dx + x, dy + y];
+  };
 }
 
 /**
@@ -32,8 +32,8 @@ export function translate2d(dx, dy) {
  */
 export function scale2d(sx, sy) {
   return function (x, y) {
-    return [sx * x, sy * y]
-  }
+    return [sx * x, sy * y];
+  };
 }
 
 /**
@@ -50,7 +50,7 @@ export function composeTransform(f, g) {
   return function (x, y) {
     const result = f(x, y);
     return g(result[0], result[1]);
-  }
+  };
 }
 
 /**
@@ -73,5 +73,5 @@ export function memoizeTransform(f) {
       result = f(x, y);
       return result;
     }
-  }
+  };
 }
