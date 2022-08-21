@@ -62,5 +62,7 @@ const FACE_CARDS = ['jack', 'queen', 'king'];
  * third, and fourth cards are the face cards
  */
 export function insertFaceCards(deck) {
-  throw new Error('Implement the insertFaceCards function');
+  const cards = ['jack', 'queen', 'king'];
+  const [firstCard, ...pile] = deck;
+  return [firstCard, ...cards, ...pile];
 }
