@@ -26,5 +26,12 @@ export class Position {
     this.x = newX;
     this.y = newY;
   }
+}
 
+export class ProgramWindow {
+  constructor() {
+    this.size = new Size;
+    this.screenSize = new Size(800, 600);
+    this.position = new Position;
+  }
 }
