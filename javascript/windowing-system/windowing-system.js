@@ -35,13 +35,23 @@ export class ProgramWindow {
     this.position = new Position;
   }
 
-  resize(size) {
-    if (size.height < 1) {
-      size.height = 1;
-    }
-    if (size.width < 1) {
-      size.width = 1;
-    }
-    this.size = size;
+  resize(newSize) {
+
+    const maxWidth = this.screenSize.width - this.position.x;
+    const maxHeight = this.screenSize.height - this.position.y;
+
+    const newWidth = Math.max(1, Math.min(newSize.width, maxWidth))
+    const newHeight = Math.max(1, Math.min(newSize.height, maxHeight))
+
+    this.size.resize(newWidth, newHeight)
+  }
+
+  move(newPosition) {
+    const maxWidth = this.screenSize.width - this.size.width;
+    const maxHeight = this.screenSize.height - this.size.height;
+
+    const newX = Math.max(0, Math.min(newPosition.x, maxWidth))
+    const newY = Math.max(0, Math.min(newPosition.y, maxHeight))
+    this.position.move(newX, newY);
   }
 }
