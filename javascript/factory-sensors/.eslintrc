@@ -1,4 +1,7 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "root": true,
   "extends": "@exercism/eslint-config-javascript",
   "env": {
@@ -10,6 +13,5 @@
       "excludedFiles": ["custom.spec.js"],
       "extends": "@exercism/eslint-config-javascript/maintainers"
     }
-  ],
-  "esversion": 6
+  ]
 }
