@@ -1,4 +1,4 @@
-le// @ts-check
+// @ts-check
 
 /**
  * Double every card in the deck.
@@ -8,7 +8,7 @@ le// @ts-check
  * @returns {number[]} deck with every card doubled
  */
 export function seeingDouble(deck) {
-  throw new Error('Implement the seeingDouble function');
+  return deck.map((elem) => elem * 2);
 }
 
 /**
