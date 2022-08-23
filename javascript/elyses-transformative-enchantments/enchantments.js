@@ -86,5 +86,11 @@ export function perfectlyOrdered(deck) {
  * @returns {number[]} reordered deck
  */
 export function reorder(deck) {
-  throw new Error('Implement the reorder function');
+  const len = deck.length;
+  for(let i = 0; i < len / 2; i++) {
+    const tempElem = deck[len - 1 - i];
+    deck[len - i - 1] = deck[i];
+    deck[i] = tempElem;
+  }
+  return deck;
 }
