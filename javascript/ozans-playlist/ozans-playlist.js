@@ -39,7 +39,12 @@ export function hasTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function addTrack(playlist, track) {
-  throw new Error('Please implement the addTrack function');
+  let set = new Set();
+  set.add(track);
+  playlist.forEach((item) => set.add(item));
+  let result = [];
+  set.forEach((item) => result.push(item));
+  return result;
 }
 
 /**
