@@ -55,7 +55,12 @@ export function addTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function deleteTrack(playlist, track) {
-  throw new Error('Please implement the deleteTrack function');
+  playlist.forEach((item, index) => {
+    if (item === track) {
+      playlist.splice(index, 1)
+    }
+  });
+  return playlist;
 }
 
 /**
