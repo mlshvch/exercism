@@ -10,7 +10,7 @@
  */
 export function cardTypeCheck(stack, card) {
   let counter = 0;
-  stack.forEach((item,) => {
+  stack.forEach((item) => {
     if (item === card) {
       counter += 1;
     }
